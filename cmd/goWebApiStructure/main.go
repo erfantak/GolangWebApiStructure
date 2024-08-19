@@ -1,8 +1,8 @@
 package main
 
 import (
+	"erfantak/goWebApiStructure/internal/Route"
 	"erfantak/goWebApiStructure/internal/middleware"
-	"erfantak/goWebApiStructure/internal/route"
 	"fmt"
 	"net/http"
 )
@@ -11,8 +11,8 @@ func main() {
 	privateRoute := http.NewServeMux()
 	publicRoute := http.NewServeMux()
 
-	route.PrivateRouteDelegator(privateRoute)
-	route.PublicRouteDelegator(publicRoute)
+	Route.PrivateRouteDelegator(privateRoute)
+	Route.PublicRouteDelegator(publicRoute)
 
 	port := 8080
 	addr := fmt.Sprintf(":%d", port)
